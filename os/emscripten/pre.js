@@ -1,10 +1,6 @@
 Module.arguments.push('-mnull', '-snull', '-vsdl');
 Module['websocket'] = { url: function(host, port, proto) {
-    /* openttd.org hosts a WebSocket proxy for the content service. */
-    if (host == "content.openttd.org" && port == 3978 && proto == "tcp") {
-        return "wss://bananas-server.openttd.org/";
-    }
-
+    /* arcade: no connection to the openttd.org content proxy. */
     /* Everything else just tries to make a default WebSocket connection.
      * If you run your own server you can setup your own WebSocket proxy in
      * front of it and let people connect to your server via the proxy. You
